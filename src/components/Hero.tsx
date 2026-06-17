@@ -1,7 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 import hero from '../imgs/hero.png'
-import { Facebook, Instagram } from 'lucide-react';
-
+import { Facebook, Instagram, Youtube, Twitter } from "lucide-react";
 
 const STATS = [
   { value: '500+', label: 'Happy Clients' },
@@ -73,31 +72,63 @@ export default function Hero() {
             </button> 
           </div>
 
-          {/* icons */}
-          <div className="flex flex-wrap gap-4 my-4 animate-fade-up" style={{ animationDelay: '0.35s' }}>
-            <button
-              onClick={() =>
-    window.open(
-      'https://www.facebook.com/share/1EkWHEFY5z/?mibextid=wwXIfr',
-      '_blank'
-    )
-  }
-              className="px-4 py-4 rounded-full flex items-center text-white font-sans font-medium tracking-wide shadow-glow-lg hover:shadow-glow hover:scale-105 transition-all duration-300"
-            >
-              <Facebook size={50}></Facebook>
-            </button>
-            <button
-            onClick={() =>
-    window.open(
-      'https://www.instagram.com/glowbydipali?igsh=OHI1NzJ0N2I3M2t1',
-      '_blank'
-    )
-  }
-              className="px-4 py-4 rounded-full border flex items-center border-white/30 text-white font-sans font-medium tracking-wide hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
-            >
-              <Instagram size={50}></Instagram>
-            </button>
-          </div>
+          {/* Social Icons */}
+<div
+  className="flex flex-wrap gap-4 my-4 animate-fade-up"
+  style={{ animationDelay: "0.35s" }}
+>
+  {/* Facebook */}
+  <button
+    onClick={() =>
+      window.open(
+        "https://www.facebook.com/share/1EkWHEFY5z/?mibextid=wwXIfr",
+        "_blank"
+      )
+    }
+    className="p-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:scale-110 transition-all duration-300"
+  >
+    <Facebook size={32} />
+  </button>
+
+  {/* Instagram */}
+  <button
+    onClick={() =>
+      window.open(
+        "https://www.instagram.com/glowbydipali?igsh=OHI1NzJ0N2I3M2t1",
+        "_blank"
+      )
+    }
+    className="p-4 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white shadow-lg hover:scale-110 transition-all duration-300"
+  >
+    <Instagram size={32} />
+  </button>
+
+  {/* YouTube */}
+  <button
+    onClick={() =>
+      window.open(
+        "https://youtube.com/@YOUR_CHANNEL",
+        "_blank"
+      )
+    }
+    className="p-4 rounded-full bg-red-600 hover:bg-red-700 text-white shadow-lg hover:scale-110 transition-all duration-300"
+  >
+    <Youtube size={32} />
+  </button>
+
+  {/* Twitter / X */}
+  <button
+    onClick={() =>
+      window.open(
+        "https://x.com/YOUR_USERNAME",
+        "_blank"
+      )
+    }
+    className="p-4 rounded-full bg-black hover:bg-gray-800 text-white shadow-lg hover:scale-110 transition-all duration-300"
+  >
+    <Twitter size={32} />
+  </button>
+</div>
         </div>
 
         {/* Stats row */}

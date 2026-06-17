@@ -3,6 +3,7 @@ import { MapPin, Mail, Phone, Check, Loader } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { ContactForm } from '../types';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import emailjs from "@emailjs/browser";
 
 const EMPTY: ContactForm = { name: '', email: '', subject: '', message: '' };
 
@@ -28,6 +29,36 @@ export default function Contact() {
     setLoading(false);
     if (dbErr) setError('Something went wrong. Please try again.');
     else { setSuccess(true); setForm(EMPTY); }
+
+      try {
+    // Save to Supabase
+    const { error: dbErr } = await supabase
+      .from("contact_messages")
+      .insert([form]);
+
+    if (dbErr) throw dbErr;
+
+    // Send Email
+    await emailjs.send(
+      "service_qtnftez",
+      "template_tigeqfp",
+      {
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+      },
+      "hLqwRqbod7VvUosqH"
+    );
+
+    setSuccess(true);
+    setForm(EMPTY);
+  } catch (err) {
+    console.error(err);
+    setError("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
   };
 
   const input = 'w-full bg-cream-100 border border-rose-100 rounded-xl px-4 py-3 font-sans text-sm text-rose-900 placeholder:text-rose-300 focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-100 transition-all';
