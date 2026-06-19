@@ -79,7 +79,7 @@ export default function CartDrawer({ open, onClose }: Props) {
                         </button>
                       </div>
                       <div className="flex items-center gap-2.5">
-                        <span className="font-playfair text-base font-semibold text-rose-700">${(item.price * item.quantity).toFixed(2)}</span>
+                        <span className="font-playfair text-base font-semibold text-rose-700">₹{(item.price * item.quantity).toFixed(2)}</span>
                         <button onClick={() => removeFromCart(item.id)} className="text-rose-200 hover:text-rose-400 transition-colors">
                           <Trash2 size={13} />
                         </button>
@@ -97,10 +97,10 @@ export default function CartDrawer({ open, onClose }: Props) {
           <div className="px-6 py-5 border-t border-rose-100">
             <div className="flex items-center justify-between mb-4">
               <span className="font-sans text-sm text-rose-600">Subtotal</span>
-              <span className="font-playfair text-2xl font-semibold text-rose-900">${totalPrice.toFixed(2)}</span>
+              <span className="font-playfair text-2xl font-semibold text-rose-900">₹{totalPrice.toFixed(2)}</span>
             </div>
             <button className="w-full py-4 rounded-xl bg-gradient-to-r from-rose-500 to-blush-400 text-white font-sans font-medium tracking-wide shadow-glow hover:shadow-glow-lg hover:scale-[1.02] transition-all duration-300">
-              Checkout — ${totalPrice.toFixed(2)}
+              Checkout — ₹{totalPrice.toFixed(2)}
             </button>
             <button
               onClick={clearCart}

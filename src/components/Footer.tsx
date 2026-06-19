@@ -1,9 +1,30 @@
-import { Sparkles, ArrowUp, Mail } from 'lucide-react';
+import { ArrowBigRightDashIcon, ArrowUp, Mail } from 'lucide-react';
+import logo from '../imgs/logo.jpeg';
+import whatsapp from '../imgs/whatsapp.png'
 
 const FOOTER_NAV = {
-  Services: ['Bridal Makeup', 'Editorial & Fashion', 'Special Occasion', 'Group Bookings', 'Masterclass'],
-  Shop: ['Foundation', 'Lips', 'Eyes', 'Cheeks', 'Tools'],
-  Info: ['About Dipali', 'Portfolio', 'Press', 'Policies & FAQ'],
+  Services: [
+    { name: 'Bridal Makeup', link: '#services' },
+    { name: 'Editorial & Fashion', link: '#services' },
+    { name: 'Special Occasion', link: '#services' },
+    { name: 'Group Bookings', link: '#services' },
+    { name: 'Masterclass', link: '#services' },
+  ],
+
+  Shop: [
+    { name: 'Foundation', link: '#shop' },
+    { name: 'Lips', link: '#shop' },
+    { name: 'Eyes', link: '#shop' },
+    { name: 'Cheeks', link: '#shop' },
+    { name: 'Tools', link: '#shop' },
+  ],
+
+  Info: [
+    { name: 'About Dipali', link: '#about' },
+    { name: 'Portfolio', link: '#gallery' },
+    { name: 'Press', link: '#testimonials' },
+    { name: 'Policies & FAQ', link: '#contact' },
+  ],
 };
 
 export default function Footer() {
@@ -16,63 +37,62 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5 mb-5">
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-rose-500 to-blush-400 flex items-center justify-center">
-                <Sparkles size={15} className="text-white" />
+                             <img src={logo} alt="Logo" className='w-full h-full rounded-full' />
               </div>
               <span className="font-playfair text-2xl text-white font-semibold">
-                Glow <em className="not-italic italic font-normal">by</em> Dipali
+                glowbydipali
               </span>
             </div>
             <p className="font-cormorant text-lg italic text-white/55 leading-relaxed mb-6 max-w-xs">
               "Enhancing natural beauty through the artistry of professional makeup -Ishu."
             </p>
-            <div className="flex gap-2.5">
-              {['IG', 'YT', 'TK', 'PIN'].map(s => (
-                <div
-                  key={s}
-                  className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-rose-500 hover:border-rose-500 transition-all cursor-pointer"
-                >
-                  <span className="font-sans text-[11px] text-white/65 font-semibold">{s}</span>
-                </div>
-              ))}
-            </div>
+          
           </div>
 
           {/* Nav columns */}
-          {Object.entries(FOOTER_NAV).map(([section, links]) => (
-            <div key={section}>
-              <h4 className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-rose-300 mb-5">{section}</h4>
-              <ul className="space-y-3">
-                {links.map(link => (
-                  <li key={link}>
-                    <span className="font-sans text-sm text-white/45 hover:text-white/70 transition-colors cursor-pointer">
-                      {link}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+{Object.entries(FOOTER_NAV).map(([section, links]) => (
+  <div key={section}>
+    <h4 className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-rose-300 mb-5">
+      {section}
+    </h4>
+
+    <ul className="space-y-3">
+      {links.map((item) => (
+        <li key={item.name}>
+          <a
+            href={item.link}
+            className="font-sans text-sm text-white/45 hover:text-white/70 transition-colors cursor-pointer"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+))}
         </div>
 
         {/* Newsletter strip */}
         <div className="bg-white/6 border border-white/10 rounded-2xl p-6 mb-12 flex flex-col md:flex-row items-center gap-5">
           <div className="flex items-center gap-3 flex-shrink-0">
             <div className="w-10 h-10 rounded-xl bg-rose-500/30 flex items-center justify-center">
-              <Mail size={16} className="text-blush-300" />
+              <ArrowBigRightDashIcon size={16} className="text-blush-300" />
             </div>
             <div>
-              <p className="font-sans text-sm font-semibold text-white">Join the glowbydipali Community</p>
+              <p className="font-sans text-sm font-semibold text-white">Join the glowbydipali WhatsApp Channel</p>
               <p className="font-sans text-xs text-white/45">Beauty tips, exclusive offers &amp; new arrivals.</p>
             </div>
           </div>
-          <div className="flex gap-3 w-full md:max-w-xs md:ml-auto">
-            <input
-              type="email"
-              placeholder="xyz@gmail.com"
-              className="flex-1 bg-white/10 border border-white/15 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-rose-400 transition-colors"
-            />
-            <button className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-blush-400 text-white text-sm font-sans font-medium whitespace-nowrap hover:shadow-glow transition-shadow">
-              Subscribe
+          <div className="flex gap-3 relative justify-end w-full md:max-w-xs md:ml-auto">
+            <button 
+            onClick={() => window.open("https://whatsapp.com/channel/0029VbCLrQSCsU9OUQAaGh2M",
+              "_blank"
+            )}
+            className="rounded-3xl w-1/5 text-white text-sm font-sans font-medium whitespace-nowrap hover:shadow-glow transition-shadow">
+                     <img
+  src={whatsapp}
+  className="w-full h-full object-cover object-[70%_center] md:object-center"
+/>
             </button>
           </div>
         </div>

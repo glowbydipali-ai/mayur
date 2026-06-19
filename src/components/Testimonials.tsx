@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Star, Quote } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
