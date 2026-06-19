@@ -23,7 +23,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-cormorant text-lg italic text-white/55 leading-relaxed mb-6 max-w-xs">
-              "Enhancing natural beauty through the artistry of professional makeup."
+              "Enhancing natural beauty through the artistry of professional makeup -Ishu."
             </p>
             <div className="flex gap-2.5">
               {['IG', 'YT', 'TK', 'PIN'].map(s => (
@@ -61,14 +61,14 @@ export default function Footer() {
               <Mail size={16} className="text-blush-300" />
             </div>
             <div>
-              <p className="font-sans text-sm font-semibold text-white">Join the Glow Community</p>
+              <p className="font-sans text-sm font-semibold text-white">Join the glowbydipali Community</p>
               <p className="font-sans text-xs text-white/45">Beauty tips, exclusive offers &amp; new arrivals.</p>
             </div>
           </div>
           <div className="flex gap-3 w-full md:max-w-xs md:ml-auto">
             <input
               type="email"
-              placeholder="your@email.com"
+              placeholder="xyz@gmail.com"
               className="flex-1 bg-white/10 border border-white/15 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-rose-400 transition-colors"
             />
             <button className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-blush-400 text-white text-sm font-sans font-medium whitespace-nowrap hover:shadow-glow transition-shadow">

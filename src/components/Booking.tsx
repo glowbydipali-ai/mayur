@@ -42,6 +42,30 @@ export default function Booking() {
     setLoading(false);
     if (dbErr) setError('Something went wrong. Please try again.');
     else { setSuccess(true); setForm(EMPTY); }
+
+
+
+    const whatsappMessage = `
+ New Booking Request
+
+ Name: ${form.name}
+ Phone: ${form.phone}
+ Email: ${form.email}
+
+ Service: ${form.service}
+ Date: ${form.booking_date}
+ Time: ${form.time_slot}
+
+ Notes:
+${form.notes || "N/A"}
+`;
+
+window.open(
+  `https://wa.me/919770521900?text=${encodeURIComponent(
+    whatsappMessage
+  )}`,
+  "_blank"
+);
   };
 
   const input = 'w-full bg-white border border-rose-100 rounded-xl px-4 py-3 font-sans text-sm text-rose-900 placeholder:text-rose-300 focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-100 transition-all';
@@ -124,17 +148,17 @@ export default function Booking() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="font-sans text-xs font-semibold text-rose-500 uppercase tracking-wide mb-1.5 block">Name *</label>
-                      <input name="name" value={form.name} onChange={onChange} placeholder="Full name" className={input} />
+                      <input name="name" value={form.name} onChange={onChange} placeholder="Your Full Name" className={input} />
                     </div>
                     <div>
                       <label className="font-sans text-xs font-semibold text-rose-500 uppercase tracking-wide mb-1.5 block">Phone</label>
-                      <input name="phone" value={form.phone} onChange={onChange} placeholder="+1 (555) 000" className={input} />
+                      <input name="phone" value={form.phone} onChange={onChange} placeholder="+91 77777 88888" className={input} />
                     </div>
                   </div>
 
                   <div>
                     <label className="font-sans text-xs font-semibold text-rose-500 uppercase tracking-wide mb-1.5 block">Email *</label>
-                    <input type="email" name="email" value={form.email} onChange={onChange} placeholder="you@email.com" className={input} />
+                    <input type="email" name="email" value={form.email} onChange={onChange} placeholder="xyzy@gmail.com" className={input} />
                   </div>
 
                   <div>

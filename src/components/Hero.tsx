@@ -17,10 +17,10 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src={hero}
-          alt="Makeup artistry background"
-          className="w-full h-full object-cover object-center"
-        />
+  src={hero}
+  alt="Makeup artistry background"
+  className="w-full h-full object-cover object-[70%_center] md:object-center"
+/>
         <div className="absolute inset-0 bg-gradient-to-r from-rose-950/90 via-rose-900/70 to-rose-900/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-rose-950/60 via-transparent to-transparent" />
       </div>
@@ -107,7 +107,7 @@ export default function Hero() {
   <button
     onClick={() =>
       window.open(
-        "https://youtube.com/@YOUR_CHANNEL",
+        "https://youtube.com/@glowbydipali?si=DAUxauzXhiSLxzXr",
         "_blank"
       )
     }
@@ -120,7 +120,7 @@ export default function Hero() {
   <button
     onClick={() =>
       window.open(
-        "https://x.com/YOUR_USERNAME",
+        "https://in.pinterest.com/glowbydipali/",
         "_blank"
       )
     }

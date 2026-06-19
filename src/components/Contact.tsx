@@ -86,9 +86,9 @@ export default function Contact() {
           <div className={`lg:col-span-2 transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <div className="space-y-5 mb-8">
               {[
-                { icon: MapPin, label: 'Location', value: 'Los Angeles, CA\nOn-location & Studio' },
-                { icon: Mail, label: 'Email', value: 'hello@glowbydipali.com' },
-                { icon: Phone, label: 'Phone', value: '+1 (310) 555-0192' },
+                { icon: MapPin, label: 'Location', value: 'Mahabal Road, Near Rotary Club, Girna Tank, Jalgaon, Taluka Jalgaon, District Jalgaon, Maharashtra 425001, India.' },
+                { icon: Mail, label: 'Email', value: 'glowbydipali@gmail.com' },
+                { icon: Phone, label: 'Phone', value: '+91 62692 26990 / +91 75819 65748' },
               ].map(item => (
                 <div key={item.label} className="flex gap-4 items-start group">
                   <div className="w-11 h-11 rounded-xl bg-rose-100 group-hover:bg-gradient-to-br group-hover:from-rose-500 group-hover:to-blush-400 flex items-center justify-center flex-shrink-0 transition-all duration-300">
@@ -103,16 +103,44 @@ export default function Contact() {
             </div>
 
             {/* Social links */}
-            <div className="pt-6 border-t border-rose-100 mb-8">
-              <p className="font-sans text-xs font-semibold tracking-[0.16em] uppercase text-rose-400 mb-4">Follow Along</p>
-              <div className="flex flex-wrap gap-2">
-                {['Instagram', 'Pinterest', 'TikTok', 'YouTube'].map(p => (
-                  <div key={p} className="px-3 py-2 rounded-xl bg-rose-50 border border-rose-100 hover:bg-rose-500 hover:border-rose-500 cursor-pointer transition-all group">
-                    <span className="font-sans text-xs text-rose-600 group-hover:text-white transition-colors font-semibold">{p}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+<div className="pt-6 border-t border-rose-100 mb-8">
+  <p className="font-sans text-xs font-semibold tracking-[0.16em] uppercase text-rose-400 mb-4">
+    Follow & Show Your Support
+  </p>
+
+  <div className="flex flex-wrap gap-2">
+    {[
+      {
+        name: "Instagram",
+        url: "https://www.instagram.com/glowbydipali",
+      },
+      {
+        name: "Pinterest",
+        url: "https://in.pinterest.com/glowbydipali/",
+      },
+      {
+        name: "Facebook",
+        url: "https://www.facebook.com/share/1EkWHEFY5z/?mibextid=wwXIfr",
+      },
+      {
+        name: "YouTube",
+        url: "https://youtube.com/@glowbydipali?si=DAUxauzXhiSLxzXr",
+      },
+    ].map((social) => (
+      <a
+        key={social.name}
+        href={social.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-3 py-2 rounded-xl bg-rose-50 border border-rose-100 hover:bg-rose-500 hover:border-rose-500 transition-all group"
+      >
+        <span className="font-sans text-xs text-rose-600 group-hover:text-white transition-colors font-semibold">
+          {social.name}
+        </span>
+      </a>
+    ))}
+  </div>
+</div>
 
             {/* Availability chip */}
             <div className="rounded-2xl p-5 bg-gradient-to-br from-rose-700 to-rose-950 text-white">
@@ -121,7 +149,7 @@ export default function Contact() {
                 <span className="font-sans text-sm font-semibold">Currently Accepting Bookings</span>
               </div>
               <p className="font-sans text-xs text-white/60 leading-relaxed">
-                Limited spots for 2025 weddings. Early booking strongly recommended for peak season dates.
+                Limited spots for 2026-27 weddings. Early booking strongly recommended for peak season dates.
               </p>
             </div>
           </div>
@@ -148,11 +176,11 @@ export default function Contact() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="font-sans text-xs font-semibold text-rose-500 uppercase tracking-wide mb-1.5 block">Name *</label>
-                      <input name="name" value={form.name} onChange={onChange} placeholder="Your name" className={input} />
+                      <input name="name" value={form.name} onChange={onChange} placeholder="Your Full Name" className={input} />
                     </div>
                     <div>
                       <label className="font-sans text-xs font-semibold text-rose-500 uppercase tracking-wide mb-1.5 block">Email *</label>
-                      <input type="email" name="email" value={form.email} onChange={onChange} placeholder="you@email.com" className={input} />
+                      <input type="email" name="email" value={form.email} onChange={onChange} placeholder="xyz@gmail.com" className={input} />
                     </div>
                   </div>
                   <div>

@@ -33,7 +33,6 @@ export default function Shop() {
   };
 
   const filtered = activeCat === 'all' ? products : products.filter(p => p.category === activeCat);
-
   return (
     <section
       id="shop"
@@ -112,7 +111,7 @@ export default function Shop() {
                   <h3 className="font-playfair text-lg font-semibold text-rose-900 leading-snug mb-2">{product.name}</h3>
                   <p className="font-sans text-xs text-rose-800/55 line-clamp-2 leading-relaxed mb-4">{product.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="font-playfair text-xl font-semibold text-rose-700">${product.price.toFixed(2)}</span>
+                    <span className="font-playfair text-xl font-semibold text-rose-700">₹{product.price.toFixed(2)}</span>
                     <button
                       onClick={() => handleAdd(product)}
                       disabled={!product.in_stock}
