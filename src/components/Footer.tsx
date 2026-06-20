@@ -100,7 +100,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10">
           <p className="font-sans text-xs text-white/30">
-            &copy; {new Date().getFullYear()} Glow by Dipali. All rights reserved.
+            &copy; {new Date().getFullYear()} glowbydipali. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
             {['Privacy Policy', 'Terms', 'Cookies'].map(item => (

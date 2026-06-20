@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import hero from '../imgs/hero.png'
+import hero from '../imgs/hero.webp'
 import { Facebook, Instagram, Youtube, Twitter } from "lucide-react";
 
 const STATS = [
