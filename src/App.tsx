@@ -1,5 +1,46 @@
+// import { useState } from 'react';
+// import { CartProvider } from './context/CartContext';
+// import Navigation from './components/Navigation';
+// import Hero from './components/Hero';
+// import About from './components/About';
+// import Services from './components/Services';
+// import Shop from './components/Shop';
+// import Gallery from './components/Gallery';
+// import Testimonials from './components/Testimonials';
+// import Booking from './components/Booking';
+// import Contact from './components/Contact';
+// import Footer from './components/Footer';
+// import CartDrawer from './components/CartDrawer';
+
+// export default function App() {
+//   const [cartOpen, setCartOpen] = useState(false);
+
+//   return (
+//     <CartProvider>
+//       <div className="min-h-screen bg-cream-100 antialiased">
+//         <Navigation onCartOpen={() => setCartOpen(true)} />
+//         <main>
+//           <Hero />
+//           <About />
+//           <Services />
+//           <Shop />
+//           <Gallery />
+//           <Testimonials />
+//           <Booking />
+//           <Contact />
+//         </main>
+//         <Footer />
+//         <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
+//       </div>
+//     </CartProvider>
+//   );
+// }
+
 import { useState } from 'react';
+import { useAuth } from './context/AuthContext';
+
 import { CartProvider } from './context/CartContext';
+
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -15,10 +56,29 @@ import CartDrawer from './components/CartDrawer';
 export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
 
+  // Auth Context
+  const { session, loading } = useAuth();
+
+  // Loading while checking login
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-cream-100">
+        <h2 className="text-xl font-semibold text-rose-600">
+          Loading...
+        </h2>
+      </div>
+    );
+  }
+
+  // Testing
+  console.log("Session:", session);
+
   return (
     <CartProvider>
       <div className="min-h-screen bg-cream-100 antialiased">
+
         <Navigation onCartOpen={() => setCartOpen(true)} />
+
         <main>
           <Hero />
           <About />
@@ -29,8 +89,14 @@ export default function App() {
           <Booking />
           <Contact />
         </main>
+
         <Footer />
-        <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
+
+        <CartDrawer
+          open={cartOpen}
+          onClose={() => setCartOpen(false)}
+        />
+
       </div>
     </CartProvider>
   );

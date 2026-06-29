@@ -39,7 +39,7 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-rose-500 to-blush-400 flex items-center justify-center">
                              <img src={logo} alt="Logo" className='w-full h-full rounded-full' />
               </div>
-              <span className="font-playfair text-2xl text-white font-semibold">
+              <span className="font-playfair text-2xl text-white font-semibold italic">
                 glowbydipali
               </span>
             </div>
@@ -102,21 +102,96 @@ export default function Footer() {
           <p className="font-sans text-xs text-white/30">
             &copy; {new Date().getFullYear()} glowbydipali. All rights reserved.
           </p>
-          <div className="flex items-center gap-5">
+          {/* <div className="flex items-center gap-5">
             {['Privacy Policy', 'Terms', 'Cookies'].map(item => (
               <span key={item} className="font-sans text-xs text-white/30 hover:text-white/55 transition-colors cursor-pointer">
                 {item}
               </span>
             ))}
-          </div>
+          </div> */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-rose-500 hover:border-rose-500 transition-all"
           >
             <ArrowUp size={14} className="text-white/60" />
           </button>
+
+
+
         </div>
       </div>
     </footer>
+
+//     <div className="relative group flex justify-center">
+//   {/* Toast */}
+//   <a
+//     href="https://wa.me/916263549653"
+//     target="_blank"
+//     rel="noopener noreferrer"
+//     className="flex items-center gap-3 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 px-5 py-3 rounded-2xl shadow-lg hover:scale-105 transition-all duration-300"
+//   >
+//     <img
+//       src="/developer-logo.png"
+//       alt="Developer"
+//       className="w-12 h-12 rounded-full border-2 border-white object-cover"
+//     />
+
+//     <div>
+//       <p className="text-white/80 text-xs">
+//         Website Designed & Developed By
+//       </p>
+//       <p className="text-white font-semibold">
+//         Mayur Sharma 🚀
+//       </p>
+//     </div>
+//   </a>
+
+//   {/* Hover Card */}
+//   <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 group-hover:-translate-y-2 z-50">
+//     <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+
+//       <div className="h-24 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500" />
+
+//       <div className="px-6 pb-6 -mt-12">
+//         <img
+//           src="/developer-logo.png"
+//           alt="Mayur Sharma"
+//           className="w-24 h-24 rounded-full border-4 border-white object-cover mx-auto"
+//         />
+
+//         <h3 className="text-center text-xl font-bold text-gray-900 mt-3">
+//           Mayur Sharma
+//         </h3>
+
+//         <p className="text-center text-gray-500 text-sm">
+//           React Developer • UI Designer
+//         </p>
+
+//         <p className="text-center text-gray-600 text-sm mt-3">
+//           Modern websites, E-commerce stores, Landing pages,
+//           Portfolio websites and custom web applications.
+//         </p>
+
+//         <div className="flex justify-center gap-3 mt-5">
+//           <a
+//             href="https://wa.me/916263549653"
+//             target="_blank"
+//             className="px-4 py-2 rounded-xl bg-green-500 text-white text-sm font-medium hover:scale-105 transition-all"
+//           >
+//             WhatsApp
+//           </a>
+
+//           <a
+//             href="https://github.com/glowbydipali-ai"
+//             target="_blank"
+//             className="px-4 py-2 rounded-xl bg-gray-900 text-white text-sm font-medium hover:scale-105 transition-all"
+//           >
+//             GitHub
+//           </a>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </div>
   );
 }

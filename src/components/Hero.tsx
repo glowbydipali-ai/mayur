@@ -21,7 +21,7 @@ export default function Hero() {
   alt="Makeup artistry background"
   className="w-full h-full object-cover object-[70%_center] md:object-center"
 />
-        <div className="absolute inset-0 bg-gradient-to-r from-rose-950/90 via-rose-900/70 to-rose-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-rose-950/90" />
         <div className="absolute inset-0 bg-gradient-to-t from-rose-950/60 via-transparent to-transparent" />
       </div>
 
@@ -141,15 +141,6 @@ export default function Hero() {
           ))}
         </div>
       </div>
-
-      {/* Scroll cue */}
-      <button
-        onClick={() => scrollTo('#about')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/40 hover:text-white/70 transition-colors animate-bounce"
-      >
-        <span className="font-sans text-[10px] tracking-widest uppercase">Scroll</span>
-        <ChevronDown size={16} />
-      </button>
     </section>
   );
 }
